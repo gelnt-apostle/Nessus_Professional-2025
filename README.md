@@ -1,2 +1,61 @@
-# Nessus_Professional-2025
-Nessus is an Vulnerability Asseesment Tools to help Penetration tester and Red Team Operations to conduct Vulnerability Assessment
+<img width="1100" height="500" src="https://github.com/xiv3r/Nessus_Professional/blob/main/6296008.jpeg">
+
+# <h1 align="center">Nessus Professional</h1>
+
+<p align="center">Nessus Professional stands as a powerful and versatile vulnerability assessment solution, empowering organizations of all sizes to fortify their cybersecurity posture. Its comprehensive vulnerability coverage, rapid asset discovery, configuration auditing, target profiling, malware detection, and sensitive data discovery capabilities make it an invaluable tool for mitigating cyber threats. </p>
+<br></br>
+
+
+
+### Requirements
+
+     sudo apt install docker.io
+
+
+### Setup
+
+    git clone https://github.com/xiv3r/Nessus_Professional.git
+
+    cd Nessus_Professional
+
+    sudo chmod +x Ramisec-Nessus-Installer.sh
+    
+    sudo ./Ramisec-Nessus-Installer.sh (Must be run as Root)
+    
+    sudo docker pull ramisec/nessus
+    
+    sudo docker run -d --name=nessus -p 8834:8834 ramisec/nessus
+    
+    sudo docker exec -it nessus /bin/bash /nessus/update.sh
+
+
+### Updating the Plugins
+
+    sudo docker exec -it nessus /bin/bash /nessus/update.sh
+
+
+### Username & Password settings 
+
+Reset the Password
+
+    sudo docker exec -it nessus /opt/nessus/sbin/nessuscli chpasswd
+
+
+Login: `admin`
+
+Add New Password:
+
+New password: `password`
+
+Verify new password: `password`
+
+
+#### Go to 👉 [BROWSER](https://localhost:8834) or copy `https://localhost:8834/` and paste into the browser.
+
+
+<h1 align="center">
+Update
+
+</h1>
+  
+    curl https://raw.githubusercontent.com/xiv3r/Nessus_Professional/main/nessus_update_debian_only.sh | sudo bash
